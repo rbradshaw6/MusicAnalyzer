@@ -7,21 +7,15 @@ function setup() {
    mic.start();
    fft = new p5.FFT();
    fft.setInput(mic);
-    
-   
-   
 }
 var ell = new Array(50);
 
 function draw() {
     
     background(0,0,0,0);
-    amplitude = new p5.Amplitude();
-    
-    
+    amplitude = new p5.Amplitude()
     var level = amplitude.getLevel();
- 
-    ////////\\\\\\
+    
     var spectrum = fft.analyze();
     beginShape();
    
@@ -30,26 +24,20 @@ function draw() {
        
        stroke(255,255,255);
        if (typeof(spectrum[i]) != "undefined" && (spectrum[i] != 0)){
-           
         fill(102,204,255);
        }
-       //vertex(i++, map(spectrum[i], 0, 255, height, 0) );
        var a = ellipse(width/2,height/2,spectrum[i],spectrum[i]);
        ell.push(a);
-       //console.log(spectrum[i]*3);
    }
     
    endShape();
-}    //////\\\\\\\\
+}   
 while(spectrum[i] != undefined){
 
 
 }
 if(ell[200] % null || ell[200] % 0){
-    
-    ell.pop(0);
-
-}
+    ell.pop(0);}
 
     
 var generateEll = function() {
